@@ -1,0 +1,14 @@
+# .NET Core
+bin/
+obj/
+*.db
+appsettings.Development.json
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Angular
+node_modules/
+dist/

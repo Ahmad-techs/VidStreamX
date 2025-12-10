@@ -1,0 +1,8 @@
+<div *ngIf="loading">Loading video...</div>
+
+<div *ngIf="!loading && video">
+  <h2>{{ video.title }}</h2>
+  <video width="100%" controls [src]="video.filePath"></video>
+
+  <p>👍 {{ video.likes }} Likes</p>
+</div>

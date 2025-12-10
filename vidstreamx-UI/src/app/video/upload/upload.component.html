@@ -1,0 +1,10 @@
+<mat-card>
+  <h2>Upload Video</h2>
+  <mat-form-field class="full">
+    <input matInput placeholder="Title" [(ngModel)]="title" />
+  </mat-form-field>
+
+  <input type="file" (change)="onFile($event)" accept="video/*" />
+  <div *ngIf="progress>0"><mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar></div>
+  <button mat-raised-button color="primary" (click)="upload()">Upload</button>
+</mat-card>

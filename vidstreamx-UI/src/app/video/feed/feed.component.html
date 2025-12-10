@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+  <span class="logo">🎬 VidStreamX</span>
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/upload">
+    <mat-icon>cloud_upload</mat-icon> Upload
+  </button>
+
+  <button mat-button routerLink="/login">
+    <mat-icon>login</mat-icon> Login
+  </button>
+</mat-toolbar>
+
+<div class="container">
+  <div *ngIf="loading" class="loading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+
+  <mat-card *ngFor="let v of videos" class="video-card">
+    
+    <!-- Clickable Thumbnail to Watch Page -->
+    <a [routerLink]="['/watch', v.id]" class="thumb-wrapper">
+      <video width="100%" muted controls preload="metadata" class="thumb">
+        <source [src]="v.blobUrl" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </a>
+
+    <mat-card-content>
+      <h3 class="title">{{ v.title }}</h3>
+      <p class="subtitle">
+        👤 {{ v.owner }} &nbsp; | &nbsp; 👍 {{ v.likesCount }} likes
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button color="primary" (click)="like(v)">
+        <mat-icon>thumb_up</mat-icon> Like
+      </button>
+
+      <button mat-stroked-button color="accent" [routerLink]="['/watch', v.id]">
+        <mat-icon>play_circle</mat-icon> Watch
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

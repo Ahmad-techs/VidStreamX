@@ -1,0 +1,6 @@
+@VidStreamX_HostAddress = http://localhost:5157
+
+GET {{VidStreamX_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

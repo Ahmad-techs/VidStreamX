@@ -1,0 +1,7 @@
+<mat-card class="auth-card">
+  <h2>Login</h2>
+  <mat-form-field class="full"><input matInput placeholder="Email" [(ngModel)]="email"></mat-form-field>
+  <mat-form-field class="full"><input matInput type="password" placeholder="Password" [(ngModel)]="password"></mat-form-field>
+  <button mat-raised-button color="primary" (click)="submit()">Login</button>
+  <p>Don't have account? <a routerLink="/register">Register</a></p>
+</mat-card>
